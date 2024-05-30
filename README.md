@@ -37,7 +37,7 @@ If you have any questions or feedback, please feel free to reach out:
 
 - **Astha Sharma**
 - **Email**: astha4627@gmail.com
-- **GitHub**: 
+- **GitHub**: https://github.com/iasthasharma
 
 ---
 
