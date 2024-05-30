@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythical Himachal</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Add any additional links to fonts or icons here -->
+</head>
+
+<body>
+    <!-- Navbar/Header -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Mythical Himachal">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Discover</a>
+                    <div class="dropdown-content">
+                        <a href="#part1">Part 1</a>
+                        <a href="#part2">Part 2</a>
+                        <a href="#part3">Part 3</a>
+                    </div>
+                </li>
+                <li class="profile">
+                    <a href="#" class="profile-btn">My Profile</a>
+                    <div class="profile-content">
+                        <a href="#profile">View Profile</a>
+                        <a href="#login">Sign In</a>
+                        <a href="#signup">Sign Up</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" id="search-icon"><i class="fas fa-search"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <video autoplay muted loop src="assets/visuals/bg video.mp4"></video>
+        <div class="content-overlay">
+            <h1>Welcome to Mythical Himachal</h1>
+            <p>Embark on a Journey Through the Enchanting Land of Himachal Pradesh - Where Every Page Tells a Story!</p>
+            <button id="join-now">Join Now</button>
+        </div>
+    </main>
+    <div id="search-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-search-modal">&times;</span>
+            <h2>Search</h2>
+            <form>
+                <input type="text" placeholder="Search..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login/Signup Modal (hidden by default) -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-body">
+                <!-- Login or Signup form will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
