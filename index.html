@@ -7,6 +7,20 @@
     <title>Mythical Himachal</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
     <!-- Add any additional links to fonts or icons here -->
 </head>
 
@@ -16,31 +30,41 @@
         <div class="logo">
             <img src="logo.png" alt="Mythical Himachal">
         </div>
-        <nav>
+        <div class="menu-icon">&#9776;</div> <!-- Menu Icon -->
+        <nav class="nav-links">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Discover</a>
                     <div class="dropdown-content">
-                        <a href="#part1">Part 1</a>
-                        <a href="#part2">Part 2</a>
-                        <a href="#part3">Part 3</a>
+                        <a href="scriptures">Scriptures</a>
+                        <a href="mythology">Mythology</a>
+                        <a href="cuisine">Cuisine</a>
+                        <a href="festivals">Festivals</a>
+                        <a href="temples">Temples</a>
+                        <a href="art">Art & Crafts</a>
+                        <a href="lifestyle">Lifestyle</a>
                     </div>
                 </li>
                 <li class="profile">
                     <a href="#" class="profile-btn">My Profile</a>
                     <div class="profile-content">
                         <a href="#profile">View Profile</a>
-                        <a href="#login">Sign In</a>
-                        <a href="#signup">Sign Up</a>
+                        <a href="login.html">Log In</a>
+                        <a href="signup.html">Sign Up</a>
                     </div>
                 </li>
                 <li>
                     <a href="#" id="search-icon"><i class="fas fa-search"></i></a>
+                    <div class="search-container" id="search-container">
+                        <input type="text" id="search-input" placeholder="Search...">
+                        <div class="suggestions" id="search-suggestions"></div>
+                    </div>
                 </li>
             </ul>
         </nav>
     </header>
+
 
     <!-- Main Content -->
     <main class="main-content">
@@ -48,29 +72,261 @@
         <div class="content-overlay">
             <h1>Welcome to Mythical Himachal</h1>
             <p>Embark on a Journey Through the Enchanting Land of Himachal Pradesh - Where Every Page Tells a Story!</p>
-            <button id="join-now">Join Now</button>
+            <button id="join-now" class="join-now">Join Now</button>
         </div>
     </main>
-    <div id="search-modal" class="modal">
+
+    <!-- Modal Structure -->
+    <div id="join-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button" id="close-search-modal">&times;</span>
-            <h2>Search</h2>
-            <form>
-                <input type="text" placeholder="Search..." required>
-                <button type="submit">Search</button>
-            </form>
+            <span class="close">&times;</span>
+            <h2>Join Mythical Himachal</h2>
+            <p>Please login or signup to continue.</p>
+            <button class="modal-button" id="login-btn">Login</button>
+            <button class="modal-button" id="signup-btn">Signup</button>
         </div>
     </div>
 
-    <!-- Login/Signup Modal (hidden by default) -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <div id="modal-body">
-                <!-- Login or Signup form will be inserted here -->
+    </div>
+    <section class="discover">
+        <h1>Dive into the Mystical World of Himachal Pradesh</h1>
+        <p>Immerse yourself in the rich culture, breathtaking landscapes, and vibrant traditions of Himachal Pradesh.
+            Join a community passionate about sharing and discovering the hidden gems of this majestic region. Unleash
+            your creativity and contribute your own stories, photos, and experiences to enrich our collective
+            exploration.</p>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-landmark"></i>
+                <h2>Rich Culture</h2>
+                <p>Experience the diverse and vibrant cultural heritage that Himachal Pradesh has to offer, from
+                    traditional dances to ancient temples.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-mountain"></i>
+                <h2>Breathtaking Landscapes</h2>
+                <p>Discover the stunning natural beauty of the mountains, valleys, and rivers, each with its own unique
+                    story and charm.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-people-arrows"></i>
+                <h2>Vibrant Traditions</h2>
+                <p>Join in the colorful festivals and traditions that define the region's unique identity, and learn
+                    from the locals who keep these traditions alive.</p>
             </div>
         </div>
-    </div>
+    </section>
+
+    </section>
+    <!-- Today's Topic Section -->
+    <section class="todays-topic">
+        <h2>Today's Topic</h2>
+        <div class="topics-container">
+            <div class="topic">
+                <img src="topic1.jpg" alt="Topic 1">
+                <h3>Topic 1</h3>
+                <p>Explore the lush green valleys of Himachal.</p>
+            </div>
+            <div class="topic">
+                <img src="topic2.jpg" alt="Topic 2">
+                <h3>Topic 2</h3>
+                <p>Discover the rich cultural heritage.</p>
+            </div>
+            <div class="topic">
+                <img src="topic3.jpg" alt="Topic 3">
+                <h3>Topic 3</h3>
+                <p>Adventure activities in the mountains.</p>
+            </div>
+            <div class="topic">
+                <img src="topic4.jpg" alt="Topic 4">
+                <h3>Topic 4</h3>
+                <p>Beautiful temples and monasteries.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Recommended for You Section -->
+    <section class="recommended-for-you">
+        <h2>Recommended for You</h2>
+        <div class="recommended-container">
+            <div class="recommended">
+                <img src="assets/recommended1.jpg" alt="Recommended 1">
+                <h3>Recommended 1</h3>
+                <p>Experience the serene beauty of the mountains.</p>
+            </div>
+            <div class="recommended">
+                <img src="assets/recommended2.jpg" alt="Recommended 2">
+                <h3>Recommended 2</h3>
+                <p>Uncover the hidden gems of Himachal Pradesh.</p>
+            </div>
+            <div class="recommended">
+                <img src="assets/recommended3.jpg" alt="Recommended 3">
+                <h3>Recommended 3</h3>
+                <p>Relax in the picturesque hill stations.</p>
+            </div>
+            <div class="recommended">
+                <img src="assets/recommended4.jpg" alt="Recommended 4">
+                <h3>Recommended 4</h3>
+                <p>Explore the local cuisine and traditions.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Grey Section -->
+    <section class="grey-section">
+        <div class="grey-content">
+            <p>Unleash the Magic of Himachal Pradesh! Explore, Discover, and Contribute Today!</p>
+            <button class="explore-button">Start Exploring</button>
+        </div>
+    </section>
+    <!-- Image Gallery Section -->
+    <section class="image-gallery">
+        <h2>Image Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://source.unsplash.com/400x300/?himachal, hilsls" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://source.unsplash.com/400x300/?himachal, mountains" alt="Gallery Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://source.unsplash.com/400x300/?shimla, snow" alt="Gallery Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://source.unsplash.com/400x300/?solan, himachal" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="https://source.unsplash.com/400x300/?manali, hills" alt="Gallery Image 5">
+            </div>
+            <div class="gallery-item">
+                <img src="https://source.unsplash.com/400x300/?spitivalley, adventure" alt="Gallery Image 6">
+            </div>
+        </div>
+    </section>
+    <!-- Explore, Connect, and Contribute Section -->
+    <section class="explore-connect-contribute">
+        <h2>Discover More</h2>
+        <div class="ecc-container">
+            <div class="ecc-item">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Explore</h3>
+                <p>Delve into the heart of Himachal Pradesh and discover its hidden gems and majestic landscapes.</p>
+            </div>
+            <div class="ecc-item">
+                <i class="fas fa-users"></i>
+                <h3>Connect</h3>
+                <p>Engage with fellow travelers and locals to share experiences and create lasting memories.</p>
+            </div>
+            <div class="ecc-item">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>Contribute</h3>
+                <p>Join community projects and contribute to preserving the natural beauty and cultural heritage of
+                    Himachal.</p>
+            </div>
+        </div>
+    </section>
+    <!-- User Reviews Section -->
+    <section class="user-reviews">
+        <h2>User Reviews</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <h3>John Doe</h3>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis urna eu fringilla
+                    dapibus. Proin vitae lacinia tortor.</p>
+            </div>
+            <div class="review-card">
+                <h3>Jane Smith</h3>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis urna eu fringilla
+                    dapibus. Proin vitae lacinia tortor.</p>
+            </div>
+            <div class="review-card">
+                <h3>Michael Brown</h3>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis urna eu fringilla
+                    dapibus. Proin vitae lacinia tortor.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Join the Adventure Section -->
+    <section class="join-adventure">
+        <h2>Join the Adventure</h2>
+        <p>Connect with us on social media and be a part of our journey!</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2>Get in Touch</h2>
+        <div class="map-container">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Address: 123 Himachal Street, Shimla, HP, India</p>
+                <p>Phone: +91 12345 67890</p>
+                <p>Email: info@mythicalhimachal.com</p>
+                <p>Follow us on social media for the latest updates.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.916860385842!2d77.17338941466074!3d31.104813681497457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390578ffbfb741cf%3A0x1e09371d4f0a5e7c!2sShimla%2C%20Himachal%20Pradesh%2C%20India!5e0!3m2!1sen!2sus!4v1629875321423!5m2!1sen!2sus"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-item">
+                <a href="about.html">
+                    <h3>About</h3>
+                </a>
+            </div>
+            <div class="footer-item">
+                <a href="contribute.html">
+                    <h3>Contribute</h3>
+                </a>
+            </div>
+            <div class="footer-item">
+                <a href="contact.html">
+                    <h3>Contact</h3>
+                </a>
+            </div>
+            <div class="footer-item">
+                <a href="feedback.html">
+                    <h3>Send Feedback</h3>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mythical Himachal. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="assets/js/scripts.js"></script>
 </body>
