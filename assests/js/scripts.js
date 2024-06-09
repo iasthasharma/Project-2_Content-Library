@@ -1,63 +1,87 @@
-// JavaScript for handling the Join Now button and modal functionality
+document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const navLinks = document.querySelector('.nav-links');
 
-document.getElementById('join-now').addEventListener('click', function() {
-    document.getElementById('modal').style.display = 'block';
-    document.getElementById('modal-body').innerHTML = `
-        <h2>Login or Sign Up</h2>
-        <button onclick="showLoginForm()">Login</button>
-        <button onclick="showSignupForm()">Sign Up</button>
-    `;
+    menuIcon.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+    });
 });
 
-document.querySelector('.close-button').addEventListener('click', function() {
-    document.getElementById('modal').style.display = 'none';
-});
 
-window.onclick = function(event) {
-    if (event.target == document.getElementById('modal')) {
-        document.getElementById('modal').style.display = 'none';
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the modal
+    const modal = document.getElementById("join-modal");
+
+    // Get the button that opens the modal
+    const btn = document.getElementById("join-now");
+
+    // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName("close")[0];
+
+    // Get the login and signup buttons
+    const loginBtn = document.getElementById("login-btn");
+    const signupBtn = document.getElementById("signup-btn");
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
     }
-};
 
-function showLoginForm() {
-    document.getElementById('modal-body').innerHTML = `
-        <h2>Login</h2>
-        <form>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required><br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br><br>
-            <button type="submit">Login</button>
-        </form>
-    `;
-}
-
-function showSignupForm() {
-    document.getElementById('modal-body').innerHTML = `
-        <h2>Sign Up</h2>
-        <form>
-            <label for="new-username">Username:</label>
-            <input type="text" id="new-username" name="new-username" required><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="new-password">Password:</label>
-            <input type="password" id="new-password" name="new-password" required><br><br>
-            <button type="submit">Sign Up</button>
-        </form>
-    `;
-}
-
-// Add search modal functionality
-document.getElementById('search-icon').addEventListener('click', function() {
-    document.getElementById('search-modal').style.display = 'block';
-});
-
-document.getElementById('close-search-modal').addEventListener('click', function() {
-    document.getElementById('search-modal').style.display = 'none';
-});
-
-window.onclick = function(event) {
-    if (event.target == document.getElementById('search-modal')) {
-        document.getElementById('search-modal').style.display = 'none';
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
     }
-};
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Add event listeners for login and signup buttons
+    loginBtn.onclick = function() {
+        // Redirect to login page or handle login logic
+        window.location.href = "login.html"; // Update with your login page URL
+    }
+
+    signupBtn.onclick = function() {
+        // Redirect to signup page or handle signup logic
+        window.location.href = "signup.html"; // Update with your signup page URL
+    }
+});
+document.getElementById('search-icon').addEventListener('click', function () {
+    var searchContainer = document.getElementById('search-container');
+    if (searchContainer.style.display === 'block') {
+        searchContainer.style.display = 'none';
+    } else {
+        searchContainer.style.display = 'block';
+        document.getElementById('search-input').focus();
+    }
+});
+
+document.getElementById('search-input').addEventListener('input', function () {
+    var query = this.value.toLowerCase();
+    var suggestions = document.getElementById('search-suggestions');
+    suggestions.innerHTML = '';
+    if (query.length > 0) {
+        var sampleData = ['Shimla', 'Manali', 'Dharamshala', 'Kasauli', 'Spiti Valley'];
+        var filteredData = sampleData.filter(function (item) {
+            return item.toLowerCase().includes(query);
+        });
+        filteredData.forEach(function (item) {
+            var suggestionItem = document.createElement('div');
+            suggestionItem.className = 'suggestion-item';
+            suggestionItem.textContent = item;
+            suggestionItem.addEventListener('click', function () {
+                document.getElementById('search-input').value = item;
+                suggestions.innerHTML = '';
+            });
+            suggestions.appendChild(suggestionItem);
+        });
+    }
+});
+
+
+ 
