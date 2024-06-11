@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+      .navbar {
+            background-color: #3330;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            font-size: 20px;
+        }
 
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 25px;
+        }
+
+        .navbar a:hover {
+            color: #e0e0e0;
+        }
+
+@media (max-width: 768px) {
+.navbar {
+                flex-direction: column;
+                font-size: 18px;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+            }
+
+            .navbar li {
+                margin-right: 0;
+            }
+}
+
+@media (max-width: 480px) {
+.navbar a {
+    padding: 10px 10px;
+  }
+}
+       
+
+        /* Background video styles */
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Contact form container styles */
+        .contact-form-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(255 255 255 / 6%);
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%; /* Increased width to 60% */
+            height: 70vh;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-form-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-form-container label {
+            font-size: 18px; /* Increased font size to 18px */
+  margin-bottom: 10px;
+  font-weight: bold; /* Made labels bold */
+  color: #fff;
+        }
+
+        .contact-form-container input,.contact-form-container textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-form-container button[type="submit"] {
+            background-color: #33333357;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .contact-form-container button[type="submit"]:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Responsive design */
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .navbar ul {
+                flex-direction: column;
+            }
+            .navbar li {
+                margin-right: 0;
+            }
+            .contact-form-container {
+                width: 80%;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .contact-form-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#" class="active">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    <!-- Background video -->
+    <video autoplay muted loop id="video-background">
+        <source src="assets/visuals/bg video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Contact form container -->
+    <div class="contact-form-container">
+        <form>
+            <h2 style="color: white;">Contact Us</h2>
+            <label style="color: white;" for="name">Name:</label>
+            <input  type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+</body>
+</html>
