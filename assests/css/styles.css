@@ -10,31 +10,34 @@ body, html {
 }
 header.navbar {
     display:flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     position: sticky;
     top: 0;
     background-color: rgb(0, 0, 0);
     color: rgb(255, 251, 251);
-    padding: 20px; /* Reduced padding for smaller screens */
+    padding: 50px;
+    padding-bottom: 10px; /* Reduced padding for smaller screens */
     z-index: 1000;
-}
-
-.logo img {
-    height: 50px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     align-items: center;
-    margin: 0;
-    padding-top: 20px;
+    margin-top: 20px;
+    padding-top: 30px;
+    justify-content: flex-end;
 }
 
 nav ul li {
     margin: 0 10px;
     position: relative;
+
     
 }
 
@@ -76,37 +79,6 @@ nav ul li #search-icon i {
     font-size: 1.5em;
     cursor: pointer;
 }
-.search-container {
-    display: none;
-    position: relative;
-}
-
-.search-container input {
-    padding: 5px;
-    border: none;
-    border-radius: 3px;
-    color: #000;
-}
-
-.search-container .suggestions {
-    position: absolute;
-    top: 30px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    border-radius: 3px;
-    z-index: 1;
-    color: #000;
-}
-
-.search-container .suggestion-item {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.search-container .suggestion-item:hover {
-    background-color: #f0f0f0;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -123,6 +95,7 @@ nav ul li #search-icon i {
         top: 100%; /* Position the menu below the navbar */
         left: 0;
         width: 100%;
+        
     }
 
     nav ul.show {
@@ -518,18 +491,10 @@ nav ul li #search-icon i {
 
 .topic img {
     width: 100%;
-    height: auto;
+    height: 150px; /* Add a fixed height */
+    object-fit: cover; 
 }
 
-.topic h3 {
-    font-size: 1.5em;
-    margin: 10px 0;
-    padding: 0 10px;
-    font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
 
 .topic p {
     font-size: 1em;
@@ -548,9 +513,6 @@ nav ul li #search-icon i {
     filter: brightness(0.8);
 }
 
-.topic:hover h3, .topic:hover p {
-    color: #799ade; /* Change to your preferred hover color */
-}
 /* Recommended for You Section */
 .recommended-for-you {
     text-align: center;
@@ -667,7 +629,7 @@ nav ul li #search-icon i {
 /* Image Gallery Section */
 .image-gallery {
     text-align: center;
-    padding: 40px 0;
+    padding: 40px 20px;
     background-color: #f9f9f9;
 }
 
@@ -675,9 +637,9 @@ nav ul li #search-icon i {
     font-size: 2em;
     margin-bottom: 20px;
     font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .gallery-container {
@@ -689,16 +651,18 @@ nav ul li #search-icon i {
 
 .gallery-item {
     position: relative;
+    flex: 1 1 calc(33% - 20px);
+    max-width: calc(33% - 20px);
+    box-sizing: border-box;
     overflow: hidden;
-    width: calc(33% - 20px);
-    max-width: 300px;
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    aspect-ratio: 4 / 3; /* Maintain a 4:3 aspect ratio */
 }
 
 .gallery-item::after {
@@ -723,17 +687,27 @@ nav ul li #search-icon i {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .gallery-item {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
 @media (max-width: 768px) {
     .gallery-item {
-        width: calc(50% - 20px);
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 480px) {
     .gallery-item {
-        width: calc(100% - 20px);
+        flex: 1 1 calc(100% - 20px);
+        max-width: calc(100% - 20px);
     }
 }
+
 /* Explore, Connect, and Contribute Section */
 .explore-connect-contribute {
     text-align: center;
