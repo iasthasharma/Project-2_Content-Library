@@ -16,7 +16,7 @@ Mythical Himachal is a responsive website designed to showcase the natural beaut
 
 ## Features
 
-- **Sticky and Transparent Navbar**: A stylish navbar that remains at the top of the page.
+- **Sticky Navbar**: A stylish navbar that remains at the top of the page.
 - **Background Video**: A full-screen background video on the main content section.
 - **Interactive Elements**: Dropdown menus and modals for login, signup, and search functionality.
 - **Responsive Design**: Optimized for various screen sizes and devices.
