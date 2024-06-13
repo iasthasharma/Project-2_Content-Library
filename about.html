@@ -1,195 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet">
-    <style>
-        /* Make the video background full screen */
-        #video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
 
-        /* Style the overlay container */
-        .overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: #fff;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
 
-        /* Style the about us text */
-        .overlay h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-        }
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
 
-        .overlay p {
-            font-size: 24px;
-            margin-bottom: 40px;
-            font-family: "Lato", sans-serif;
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.wrapper {
+  position: relative;
+  z-index: 2;
+  width: 400px;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.paragraph{
+    color: white;
+    font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
-        }
+}
 
-        /* Style the call to action button */
-        .overlay button {
-            background-color: #fff;
-            color: #333;
-            border: none;
-            padding: 10px 20px;
-            font-size: 24px;
-            cursor: pointer;
-            font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-        }
-
-        .overlay button:hover {
-            background-color: #e0e0e0;
-        }
-
-        /* Style the navbar */
-        .navbar {
-            background-color: #3330;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: baseline;
-            font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-        }
-
-        .navbar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        .navbar li {
-            margin-right: 20px;
-        }
-
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 25px;
-        }
-
-        .navbar a:hover {
-            color: #e0e0e0;
-        }
-
-        /* Responsive design */
-        @media only screen and (max-width: 768px) {
-            .overlay {
-                font-size: 18px;
-            }
-
-            .overlay h1 {
-                font-size: 36px;
-            }
-
-            .overlay p {
-                font-size: 18px;
-            }
-
-            .overlay button {
-                font-size: 18px;
-            }
-
-            .navbar {
-                flex-direction: column;
-            }
-
-            .navbar ul {
-                flex-direction: column;
-            }
-
-            .navbar li {
-                margin-right: 0;
-            }
-        }
-
-        @media only screen and (max-width: 480px) {
-            .overlay {
-                font-size: 14px;
-            }
-
-            .overlay h1 {
-                font-size: 24px;
-            }
-
-            .overlay p {
-                font-size: 14px;
-            }
-
-            .overlay button {
-                font-size: 14px;
-            }
-        }
-    </style>
+  </style>
 </head>
-
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
-
-    <!-- Video background -->
-    <video autoplay muted loop id="video-background">
-        <source src="assets/visuals/bg video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Overlay container -->
-    <div class="overlay">
-        <!-- About us text -->
-        <h1>About Us</h1>
-        <p>
-            Welcome to Mythical Himachal, a project born from my deep love for the rich cultural heritage of Himachal
+  <video autoplay loop muted id="video-background">
+    <source src="assets/visuals/bg video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="wrapper">
+    <form action="#">
+      <h2>About Us</h2>
+      <div class="paragraph">
+        <p>Welcome to Mythical Himachal, a project born from my deep love for the rich cultural heritage of Himachal
             Pradesh. My vision is to share and celebrate the vibrant traditions, rituals, cuisine, and stories that make
             our culture unique and captivating. Join me in exploring and embracing the enchanting world of Himachali
-            culture. ❤️</p>
-
-        <!-- Call to action button -->
-        <button>Learn More</button>
-    </div>
+            culture. ❤️</p></p>
+      </div>
+      </div>
+    </form>
+  </div>
 </body>
-
 </html>
