@@ -1,130 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup - Mythical Himachal</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
 
-        /* Form Styles */
-        .form-container {
-            width: 100%;
-            max-width: 400px;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
 
-        .form-container h2 {
-            margin-bottom: 20px;
-        }
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
 
-        .form-container form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
 
-        .form-container label {
-            font-size: 1.1em;
-            margin-bottom: 5px;
-            text-align: left;
-            width: 100%;
-        }
+#video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
 
-        .form-container input {
-            padding: 10px;
-            font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-        }
+.wrapper {
+  position: relative;
+  z-index: 2;
+  width: 400px;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
 
-        .form-container .password-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
+form {
+  display: flex;
+  flex-direction: column;
+}
 
-        .form-container .password-wrapper input {
-            flex: 1;
-        }
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
 
-        .form-container .toggle-password {
-            position: absolute;
-            right: 10px;
-            cursor: pointer;
-        }
+.input-field {
+  position: relative;
+  border-bottom: 2px solid #ccc;
+  margin: 15px 0;
+}
 
-        .form-container button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+  font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
-        .form-container button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+.input-field input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+.wrapper a {
+  color: #efefef;
+  text-decoration: none;
+}
+
+.wrapper a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+  font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+button:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.register {
+  text-align: center;
+  margin-top: 30px;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Signup</h2>
-        <form id="signup-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="password">Password:</label>
-            <div class="password-wrapper">
-                <input type="password" id="password" name="password" required>
-                <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
-            </div>
-            
-            <label for="confirm-password">Confirm Password:</label>
-            <div class="password-wrapper">
-                <input type="password" id="confirm-password" name="confirm-password" required>
-                <span class="toggle-password" onclick="togglePassword('confirm-password')">&#128065;</span>
-            </div>
-            
-            <button type="submit">Signup</button>
-        </form>
-    </div>
-    <script>
-        // Toggle password visibility
-        function togglePassword(fieldId) {
-            const passwordField = document.getElementById(fieldId);
-            const passwordType = passwordField.getAttribute('type');
-            passwordField.setAttribute('type', passwordType === 'password' ? 'text' : 'password');
-        }
-
-        // Handle form submission
-        document.getElementById('signup-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Perform signup logic here
-            alert('Signup successful!');
-            // Redirect or further signup handling
-        });
-    </script>
+  <video autoplay loop muted id="video-background">
+    <source src="assets/visuals/bg video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="wrapper">
+    <form action="#">
+      <h2>Sign Up</h2>
+      <div class="input-field">
+        <input type="text" required>
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required>
+        <label>Create a password</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required>
+        <label>Confirm your password</label>
+      </div>
+      <button type="submit">Sign Up</button>
+      <div class="register">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
-
