@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifestyle of Himachal Pradesh</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Full-screen video background */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            background-color: #ff7b00;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background-color: #e56b00;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .lifestyle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .lifestyle-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .lifestyle-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .lifestyle-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(90%);
+            transition: filter 0.3s ease;
+        }
+
+        .lifestyle-item img:hover {
+            filter: brightness(100%);
+        }
+
+        .lifestyle-item h2 {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .lifestyle-item p {
+            text-align: center;
+            max-width: 90%;
+            padding-bottom: 1.5rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .lifestyle-item a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .lifestyle-item a:hover {
+            color: #0056b3;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav a {
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .lifestyle-item h2 {
+                font-size: 1.2rem;
+            }
+
+            .lifestyle-item p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <video class="background-video" autoplay muted loop>
+        <source src="assets/visuals/bg video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>Lifestyle of Himachal Pradesh</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="lifestyle-grid" id="lifestyle-container">
+            <!-- Sample Lifestyle Items -->
+            <div class="lifestyle-item">
+                <img src="assets/visuals/Lifestyle/agriculture.jpg" alt="Agriculture">
+                <h2>Agriculture</h2>
+                <p>The primary occupation in Himachal Pradesh, with various crops like apples, potatoes, and maize.</p>
+                <a href="https://example.com/video-agriculture" target="_blank">Watch Video</a>
+            </div>
+
+            <div class="lifestyle-item">
+                <img src="assets/visuals/Lifestyle/traditional-dress.jpg" alt="Traditional Dress">
+                <h2>Traditional Dress</h2>
+                <p>The vibrant traditional attire of Himachal showcases the rich cultural heritage of the region.</p>
+                <a href="https://example.com/video-traditional-dress" target="_blank">Watch Video</a>
+            </div>
+
+            <div class="lifestyle-item">
+                <img src="assets/visuals/Lifestyle/food.jpg" alt="Cuisine">
+                <h2>Cuisine</h2>
+                <p>Delicious Himachali cuisine includes local dishes like Chana Madra and Siddu, showcasing unique flavors.</p>
+                <a href="https://example.com/video-cuisine" target="_blank">Watch Video</a>
+            </div>
+
+            <div class="lifestyle-item">
+                <img src="assets/visuals/Lifestyle/festivals.jpg" alt="Festivals">
+                <h2>Festivals</h2>
+                <p>Various festivals celebrated in Himachal reflect the vibrant culture, including Dussehra and Lavi Mela.</p>
+                <a href="https://example.com/video-festivals" target="_blank">Watch Video</a>
+            </div>
+
+            <div class="lifestyle-item">
+                <img src="assets/visuals/Lifestyle/music-dance.jpg" alt="Music and Dance">
+                <h2>Music and Dance</h2>
+                <p>The folk music and traditional dance forms, like Nati, are integral parts of Himachali culture.</p>
+                <a href="https://example.com/video-music-dance" target="_blank">Watch Video</a>
+            </div>
+
+            <div class="lifestyle-item">
+                <img src="assets/visuals/Lifestyle/crafts.jpg" alt="Crafts">
+                <h2>Traditional Crafts</h2>
+                <p>Handicrafts and artisan works showcase the skills and creativity of the local artisans.</p>
+                <a href="https://example.com/video-crafts" target="_blank">Watch Video</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript can be added here for interactivity if needed
+    </script>
+</body>
+
+</html>
