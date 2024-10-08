@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuisines of Himachal Pradesh</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Full-screen video background */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            background-color: #ff7b00;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background-color: #e56b00;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-container {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-container button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .filter-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .cuisine-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cuisine-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cuisine-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(90%);
+            transition: filter 0.3s ease;
+        }
+
+        .cuisine-item img:hover {
+            filter: brightness(100%);
+        }
+
+        .cuisine-item h2 {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .cuisine-item p {
+            text-align: center;
+            max-width: 90%;
+            padding-bottom: 1.5rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cuisine-item a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .cuisine-item a:hover {
+            color: #0056b3;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav a {
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .filter-container button {
+                padding: 0.5rem 1rem;
+            }
+
+            .cuisine-item h2 {
+                font-size: 1.2rem;
+            }
+
+            .cuisine-item p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <video class="background-video" autoplay muted loop>
+        <source src="assets/visuals/bg video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>Cuisines of Himachal Pradesh</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="filter-container">
+            <button class="filter-btn" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="veg">Vegetarian</button>
+            <button class="filter-btn" data-filter="non-veg">Non-Vegetarian</button>
+        </div>
+
+        <div class="cuisine-grid" id="cuisine-container">
+            <!-- Sample Dishes -->
+            <div class="cuisine-item" data-category="veg">
+                <img src="assets/visuals/Dishes/aktori.jpg" alt="Aktori">
+                <h2>Aktori</h2>
+                <p>Aktori is a traditional Himachali dish made from buckwheat and wheat flour, resembling a pancake. It is a festive delicacy originating from the Spiti Valley.</p>
+                <a href="https://example.com/video-aktori" target="_blank">Watch Video</a>
+            </div>
+
+            <div class="cuisine-item" data-category="veg">
+                <img src="assets/visuals/Dishes/aloo palda.jpg" alt="Alu Palda">
+                <h2>Aloo Palda</h2>
+                <p>Aloo Palda is a comforting Himachali dish of potatoes cooked in a tangy curd-based gravy. A delicious, creamy dish that's full of traditional flavors.</p>
+                <a href="https://example.com/video-alu-palda" target="_blank">Watch Video</a>
+            </div>
+
+            <div class="cuisine-item" data-category="veg">
+                <img src="assets/visuals/Dishes/auriya Kadoo.jpg" alt="Auriya Kaddoo">
+                <h2>Auriya Kaddoo</h2>
+                <p>Auriya Kaddoo is a tangy pumpkin dish cooked in a spicy madra gravy, a staple in Himachali cuisine, often enjoyed with rice or Indian bread.</p>
+                <a href="https://example.com/video-auriya-kaddoo" target="_blank">Watch Video</a>
+            </div>
+
+            <div class="cuisine-item" data-category="non-veg">
+                <img src="assets/visuals/Dishes/pahadi chicken.jpg" alt="Pahadi Chicken">
+                <h2>Pahadi Chicken</h2>
+                <p>Pahadi Chicken is a flavorful dish with spices like coriander, garlic, and ginger, giving it a distinct taste. A perfect representation of Himachali culinary heritage.</p>
+                <a href="https://example.com/video-pahadi-chicken" target="_blank">Watch Video</a>
+            </div>
+
+            <div class="cuisine-item" data-category="non-veg">
+                <img src="assets/visuals/Dishes/chha gosht.jpg" alt="Chha Ghost">
+                <h2>Chha Ghost</h2>
+                <p>Chha Ghost is a delicious lamb curry cooked with yogurt and spices, typically served during celebrations and special occasions in Himachal Pradesh.</p>
+                <a href="https://example.com/video-chha-ghost" target="_blank">Watch Video</a>
+            </div>
+
+            <!-- More Dishes Added -->
+            <div class="cuisine-item" data-category="veg">
+                <img src="assets/visuals/Dishes/madra.jpg" alt="Madra">
+                <h2>Madra</h2>
+                <p>Madra is a rich yogurt-based curry with chickpeas or kidney beans, cooked with various spices, originating from Chamba in Himachal Pradesh.</p>
+                <a href="assets/visuals/Dishes/sepubadi.jpg" target="_blank">Watch Video</a>
+            </div>
+
+            <div class="cuisine-item" data-category="veg">
+                <img src="assets/visuals/Dishes/sepubadi.jpg" alt="Sepu Badi">
+                <h2>Sepu Badi</h2>
+                <p>Sepu Badi is a traditional Himachali dish where lentil dumplings are cooked in a yogurt and spinach-based gravy, a unique delicacy of the region.</p>
+                <a href="assets/visuals/Dishes/sepubadi.jpg" target="_blank">Watch Video</a>
+            </div>
+
+            <div class="cuisine-item" data-category="non-veg">
+                <img src="assets/visuals/Dishes/siddu.jpg" alt="Sidu">
+                <h2>Sidu</h2>
+                <p>Sidu is a traditional Himachali bread, made from wheat flour and stuffed with a variety of fillings. It's served with ghee, dal, or with vegetables.</p>
+                <a href="assets/visuals/Dishes/siddu.jpg" target="_blank">Watch Video</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cuisineItems = document.querySelectorAll('.cuisine-item');
+
+        filterBtns.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+
+                cuisineItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
