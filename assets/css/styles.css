@@ -275,6 +275,10 @@ nav ul li #search-icon i {
     .content-overlay {
         font-size: 1.2em; /* Adjust font size for smaller screens */
     }
+    .content-overlay h1 {
+        font-size: 35px;
+    }
+    
 }
 
 
@@ -301,6 +305,10 @@ nav ul li #search-icon i {
     border: 1px solid #888;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
     
 }
 
@@ -318,7 +326,7 @@ nav ul li #search-icon i {
 }
 
 .modal-button {
-    background-color: #007BFF;
+    background-color: #000000;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -327,10 +335,13 @@ nav ul li #search-icon i {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .modal-button:hover {
-    background-color: #0056b3;
+    background-color:#799ade ;
 }
 
 /* Adjustments for smaller screens */
@@ -379,9 +390,9 @@ nav ul li #search-icon i {
     font-weight: 700;
     text-transform: uppercase;
     font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .discover p {
@@ -430,8 +441,8 @@ nav ul li #search-icon i {
     margin-bottom: 10px;
     font-weight: 600;
     font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .discover .feature p {
@@ -442,7 +453,6 @@ nav ul li #search-icon i {
     font-weight: 400;
     font-style: normal;
 }
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .discover .features {
@@ -466,9 +476,9 @@ nav ul li #search-icon i {
     font-size: 2.5em;
     margin-bottom: 20px;
     font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .topics-container {
@@ -524,9 +534,9 @@ nav ul li #search-icon i {
     font-size: 2.5em;
     margin-bottom: 20px;
     font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight:600;
-  font-style: normal;
+    font-optical-sizing: auto;
+    font-weight:600;
+    font-style: normal;
 }
 
 .recommended-container {
@@ -558,9 +568,9 @@ nav ul li #search-icon i {
     margin: 10px 0;
     padding: 0 10px;
     font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .recommended p {
@@ -719,9 +729,9 @@ nav ul li #search-icon i {
     font-size: 2em;
     margin-bottom: 20px;
     font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .ecc-container {
@@ -751,9 +761,9 @@ nav ul li #search-icon i {
     font-size: 1.5em;
     margin-bottom: 10px;
     font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .ecc-item p {
@@ -1026,6 +1036,5 @@ nav ul li #search-icon i {
         font-size: 0.7em; /* Further reduce font size */
     }
 }
-
 
 
