@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginBtn = document.getElementById("login-btn");
     const signupBtn = document.getElementById("signup-btn");
 
-    // When the user clicks the button, open the modal 
+    // When the user clicks the button, open the modal
     btn.onclick = function() {
         modal.style.display = "block";
     }
@@ -84,4 +84,3 @@ document.getElementById('search-input').addEventListener('input', function () {
 });
 
 
- 
